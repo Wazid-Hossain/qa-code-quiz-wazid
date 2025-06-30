@@ -1,12 +1,44 @@
-# QA Testing Quiz
+# QA Code Quiz – Cypress & Manual Testing ✅
 
-### Scenario
-The frontend team has developed a prototype login portal for an up and coming platform.
-However, they have not implemented any testing yet and it is up to you to do so.
+I’m Wazid Hossain. This is my QA challenge project where I tested a login portal using both **automated (Cypress)** and **manual** testing approaches.
 
-As the QA developer, what is tested and how it is tested is up to you.
-Management simply asks that these tests provide as much evidence as possible of the platform's reliability.
+---
 
-### Notes
-- Submission must include a link to a public fork/clone of this repository
-- We typically use Jest for testing node.js/API related logic and Cypress for testing UI functionality, however, you are more than welcome to use any testing framework you desire so long as you are able to provide reasonable justification
+## 🔧 What I Tested
+
+✅ Login functionality   
+✅ Logout behavior  
+✅ Post-login content  
+✅ UI interaction
+
+---
+
+## 🚀 Automation with Cypress
+
+- Cypress tests are located in: `cypress/e2e/login_spec.cy.ts`
+- Each test includes:
+  - Validation for empty input
+  - Wrong credentials handling
+  - Successful login & content check
+  - Logout and return to login form
+
+### 🧪 How to Run
+
+```bash
+npm install
+npm run start
+npx cypress run
+
+
+
+📝 Manual Test Cases
+Manual test cases are documented in manual-test-cases.md.
+
+🔁 Changes Made for Testability
+File	                            Change	                                            Why
+
+Login.tsx	                        Added data-testid to inputs & button	            Makes them selectable in Cypress
+auth.tsx	                        Fixed null password error	                        Prevents app crash on login attempt
+logout button	                    Used cy.contains('LOGOUT') instead of data-testid	It didn’t originally have a data-testid
+cypress.yml	                        Created GitHub Actions CI	                        Automates testing on push/PR
+
