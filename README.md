@@ -24,7 +24,7 @@ I’m Wazid Hossain. This is my QA challenge project where I tested a login port
 
 ### 🧪 How to Run
 
-```bash
+
 npm install
 npm run start
 npx cypress run
