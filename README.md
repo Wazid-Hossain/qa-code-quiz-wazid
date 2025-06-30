@@ -31,14 +31,25 @@ npx cypress run
 
 
 
-📝 Manual Test Cases
-Manual test cases are documented in manual-test-cases.md.
+## 📄 Manual Testing
 
-🔁 Changes Made for Testability
-File	                            Change	                                            Why
+🧪 View all manual test cases here:  
+👉 [Manual Test Cases](manual-test-cases.md)
 
-Login.tsx	                        Added data-testid to inputs & button	            Makes them selectable in Cypress
-auth.tsx	                        Fixed null password error	                        Prevents app crash on login attempt
-logout button	                    Used cy.contains('LOGOUT') instead of data-testid	It didn’t originally have a data-testid
-cypress.yml	                        Created GitHub Actions CI	                        Automates testing on push/PR
+Covers:
+- Valid and invalid login scenarios
+- UI behavior (e.g. focus, input validation)
+- Logout and session behavior
+
+
+
+## 🔁 Changes Made for Testability
+
+| File          | Change                                                | Why                                           |
+|---------------|--------------------------------------------------------|-----------------------------------------------|
+| `Login.tsx`   | Added `data-testid` to inputs & button                 | Makes them selectable in Cypress              |
+| `auth.tsx`    | Fixed null `password` error                            | Prevents app crash on login attempt           |
+| Logout button | Used `cy.contains('LOGOUT')` instead of `data-testid` | It didn’t originally have a `data-testid`     |
+| `cypress.yml` | Created GitHub Actions CI workflow                     | Automates testing on push / pull request      |
+
 
