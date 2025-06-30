@@ -34,7 +34,7 @@ npx cypress run
 ## 📄 Manual Testing
 
 🧪 View all manual test cases here:  
-👉 [Manual Test Cases](manual-test-cases.md)
+📄 [View Manual Test Cases](manual-test-cases.md)
 
 Covers:
 - Valid and invalid login scenarios
