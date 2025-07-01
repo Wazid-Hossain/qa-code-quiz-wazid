@@ -1,6 +1,6 @@
 const request = require('supertest');
 const fs = require('fs');
-const app = require('../mock-api'); // ✅ update path if needed
+const app = require('../mock-api');
 
 jest.mock('fs');
 

@@ -10,7 +10,7 @@ Cypress.on('uncaught:exception', (err, runnable) => {
 });
 
 describe('Login Portal Tests', () => {
-  const baseUrl = 'http://localhost:8081';
+  const baseUrl = 'http://localhost:8080';
 
   beforeEach(() => {
     cy.visit(baseUrl);
@@ -54,7 +54,7 @@ describe('Login Portal Tests', () => {
   cy.get('[data-testid="password-input"]').should('exist');
 });
  it('logs in with dummytree credentials', () => {
-    cy.visit('http://localhost:8081');
+    cy.visit('http://localhost:8080');
     cy.get('[data-testid="username-input"]').type('dummytree');
     cy.get('[data-testid="password-input"]').type('test1');
     cy.get('[data-testid="login-button"]').click();
@@ -63,6 +63,13 @@ describe('Login Portal Tests', () => {
     cy.contains('Favourite Fruit').should('exist');
     cy.contains('Favourite Movie').should('exist');
     cy.contains('Favourite Number').should('exist');
+
+        cy.wait(3000);
+
+  cy.contains('button', 'LOGOUT', { timeout: 5000 }).should('be.visible').click();
+
+  cy.get('[data-testid="username-input"]').should('exist');
+  cy.get('[data-testid="password-input"]').should('exist');
   });
 });
 
